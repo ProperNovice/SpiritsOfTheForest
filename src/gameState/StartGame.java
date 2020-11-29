@@ -1,14 +1,16 @@
 package gameState;
 
-import enums.ESpirit;
-import model.Spirit;
+import controller.Board;
+import controller.Credentials;
 
 public class StartGame extends AGameState {
 
 	public StartGame() {
 
-		for (ESpirit eTile : ESpirit.values())
-			new Spirit(eTile);
+		Board.INSTANCE.setUpBoard();
+
+		Credentials.INSTANCE.dTile.print();
+		Credentials.INSTANCE.dFrame.print();
 
 	}
 

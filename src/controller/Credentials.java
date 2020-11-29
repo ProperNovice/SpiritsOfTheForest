@@ -11,10 +11,10 @@ public enum Credentials {
 	public final String primaryStageTitle = "Spirits of the Forest";
 	public final double gapBetweenBorders = 25, textHeight = 50, selectImageViewAbleRatioDimensions = 0.5,
 			selectImageViewAbleRatioCoordinateX = 0.5, selectImageViewAbleRatioCoordinateY = 0.5,
-			selectEventHandlerAbleWidth = 100, animationStep = 4;
+			selectEventHandlerAbleWidth, animationStep = 4, redOrbAplhabet;
 	public ArrayList<Class<?>> lineCastExcludeList = new ArrayList<Class<?>>();
 	public NumbersPair dFrame, dGapBetweenComponents, dGapBetweenComponentsLineCast, dTile;
-	public NumbersPair cTextPanel;
+	public NumbersPair cTextPanel, cBoard;
 
 	private Credentials() {
 
@@ -29,8 +29,16 @@ public enum Credentials {
 
 		this.dTile = new NumbersPair(110, 110);
 
+		this.selectEventHandlerAbleWidth = this.dTile.x / 2;
+
+		this.redOrbAplhabet = this.dTile.x;
+
 		y = 9 * this.dTile.y + 8 * this.dGapBetweenComponents.y + 2 * this.gapBetweenBorders;
 		this.dFrame = new NumbersPair(1920, y);
+
+		x = this.gapBetweenBorders + this.dTile.x / 2;
+		y = this.gapBetweenBorders + this.dTile.y;
+		this.cBoard = new NumbersPair(x, y);
 
 	}
 

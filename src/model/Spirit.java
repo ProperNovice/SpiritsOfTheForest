@@ -1,6 +1,7 @@
 package model;
 
 import controller.Credentials;
+import enums.ELayerZ;
 import enums.ESpirit;
 import utils.EventHandler.EventHandlerAble;
 import utils.Flow;
@@ -20,8 +21,9 @@ public class Spirit implements ImageViewAble, EventHandlerAble {
 		fileName = fileName.replaceAll("_", " ");
 		fileName += ".jpg";
 
-		new ImageView(fileName, this);
+		new ImageView(fileName, this, ELayerZ.SPIRIT_FRONT);
 		getImageView().setDimensions(Credentials.INSTANCE.dTile);
+		getImageView().setVisible(false);
 
 	}
 

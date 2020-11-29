@@ -39,6 +39,25 @@ public class ListImageViewAbles<T> implements Iterable<T> {
 
 	}
 
+	public void layerZSort() {
+
+		if (this.layerZListEnum == null)
+			return;
+
+		switch (this.layerZListEnum) {
+
+		case TO_BACK_FIRST_IMAGEVIEW:
+			toBackFirstImageView();
+			break;
+
+		case TO_FRONT_FIRST_IMAGEVIEW:
+			toFrontFirstImageView();
+			break;
+
+		}
+
+	}
+
 	private void toFrontFirstImageView() {
 
 		ImageViewAble imageViewAble = null;
@@ -126,20 +145,7 @@ public class ListImageViewAbles<T> implements Iterable<T> {
 
 		}
 
-		if (this.layerZListEnum == null)
-			return;
-
-		switch (this.layerZListEnum) {
-
-		case TO_BACK_FIRST_IMAGEVIEW:
-			toBackFirstImageView();
-			break;
-
-		case TO_FRONT_FIRST_IMAGEVIEW:
-			toFrontFirstImageView();
-			break;
-
-		}
+		layerZSort();
 
 	}
 

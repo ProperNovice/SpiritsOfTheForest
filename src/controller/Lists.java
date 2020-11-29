@@ -13,6 +13,9 @@ public enum Lists {
 
 		createLists();
 		repleteLists();
+
+		Board.INSTANCE.instantiate();
+
 		saveLists();
 		loadLists();
 

@@ -7,7 +7,7 @@ public class Background implements ImageViewAble, EventHandlerAble {
 
 	public Background() {
 
-		new ImageView("misc/backgroundDark.png", this, ELayerZ.BACKGROUND);
+		new ImageView("misc/backgroundLight.png", this, ELayerZ.BACKGROUND);
 
 	}
 
