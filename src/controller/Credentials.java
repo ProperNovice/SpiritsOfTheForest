@@ -8,7 +8,7 @@ public enum Credentials {
 
 	INSTANCE;
 
-	public final String primaryStageTitle = "Spirits of the Forest";
+	public final String primaryStageTitle = "Spirits of the Forest", redOrbAlphabet = "color";
 	public final double gapBetweenBorders = 25, textHeight = 50, selectImageViewAbleRatioDimensions = 0.5,
 			selectImageViewAbleRatioCoordinateX = 0.5, selectImageViewAbleRatioCoordinateY = 0.5,
 			selectEventHandlerAbleWidth, animationStep = 4, redOrbAplhabet;

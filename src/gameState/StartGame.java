@@ -1,16 +1,15 @@
 package gameState;
 
 import controller.Board;
-import controller.Credentials;
+import redOrbAlphabet.RedOrbAlphabetFive;
 
 public class StartGame extends AGameState {
 
 	public StartGame() {
 
 		Board.INSTANCE.setUpBoard();
-
-		Credentials.INSTANCE.dTile.print();
-		Credentials.INSTANCE.dFrame.print();
+		
+		new RedOrbAlphabetFive();
 
 	}
 
