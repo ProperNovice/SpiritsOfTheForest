@@ -94,7 +94,7 @@ public enum AlphabeticalOrderGreek {
 
 	}
 
-	private static String getStringAtIndex(String string, int index) {
+	private String getStringAtIndex(String string, int index) {
 		return string.substring(index, index + 1);
 	}
 

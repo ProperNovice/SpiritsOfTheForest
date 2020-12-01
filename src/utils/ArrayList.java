@@ -166,7 +166,7 @@ public class ArrayList<T> implements Iterable<T>, ISaveLoadStateAble {
 		Logger.INSTANCE.log("/*");
 
 		for (T t : this.list)
-			Logger.INSTANCE.log(t);
+			Logger.INSTANCE.log(t.getClass());
 
 		Logger.INSTANCE.log("*/");
 

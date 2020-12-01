@@ -1,15 +1,18 @@
 package gameState;
 
 import controller.Board;
-import redOrbAlphabet.RedOrbAlphabetFive;
+import utils.Flow;
 
 public class StartGame extends AGameState {
 
 	public StartGame() {
 
 		Board.INSTANCE.setUpBoard();
-		
-		new RedOrbAlphabetFive();
+
+		Flow.INSTANCE.getFlow().addLast(StatisticsUpdateQuantity.class);
+		Flow.INSTANCE.getFlow().addLast(RevealTiles.class);
+
+		Flow.INSTANCE.proceed();
 
 	}
 

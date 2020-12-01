@@ -12,8 +12,11 @@ public class TileSpirit implements EventHandlerAble {
 
 	private ListImageViewAbles<Spirit> listSpirit = null;
 	private ListImageViewAbles<SpiritBack> listBack = null;
+	private ESpirit eSpirit = null;
 
 	public TileSpirit(ESpirit eSpirit, int count) {
+
+		this.eSpirit = eSpirit;
 
 		this.listSpirit = new ListImageViewAbles<Spirit>(new CoordinatesListBuilder()
 				.rearrangeTypeEnum(RearrangeTypeEnum.PIVOT).objectsPerRow(1).gapY(Credentials.INSTANCE.dTile.y).build(),
@@ -41,14 +44,29 @@ public class TileSpirit implements EventHandlerAble {
 
 	}
 
+	public void setVisible(boolean value) {
+
+		for (SpiritBack spiritBack : this.listBack)
+			spiritBack.getImageView().setVisible(value);
+
+		for (Spirit spirit : this.listSpirit)
+			spirit.getImageView().setVisible(value);
+
+	}
+
 	public void revealTile() {
 
 		for (SpiritBack spiritBack : this.listBack)
 			spiritBack.getImageView().setVisible(false);
 
-		for (Spirit spirit : this.listSpirit)
-			spirit.getImageView().setVisible(true);
+	}
 
+	public ESpirit getESpirit() {
+		return this.eSpirit;
+	}
+
+	public int getSpiritSize() {
+		return this.listSpirit.getArrayList().size();
 	}
 
 }

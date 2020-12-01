@@ -15,6 +15,7 @@ public enum Lists {
 		repleteLists();
 
 		Board.INSTANCE.instantiate();
+		Statistics.INSTANCE.instantiate();
 
 		saveLists();
 		loadLists();

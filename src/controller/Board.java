@@ -11,7 +11,7 @@ public enum Board {
 
 	private ArrayList<TileSpirit> tileSpirits = new ArrayList<TileSpirit>();
 	private ArrayList<ArrayList<NumbersPair>> coordinates = new ArrayList<ArrayList<NumbersPair>>();
-	private ArrayList<ArrayList<TileSpirit>> board = new ArrayList<ArrayList<TileSpirit>>();
+	public ArrayList<ArrayList<TileSpirit>> board = new ArrayList<ArrayList<TileSpirit>>();
 
 	private Board() {
 
@@ -32,8 +32,6 @@ public enum Board {
 
 				tileSpirit.setPivotRelocate(this.coordinates.get(row).get(column));
 				list.addLast(tileSpirit);
-
-				tileSpirit.revealTile();
 
 			}
 
@@ -102,8 +100,8 @@ public enum Board {
 		addTileSpirit(ESpirit.MOSS, 1, 3);
 		addTileSpirit(ESpirit.MOSS, 2, 1);
 
-		addTileSpirit(ESpirit.MUSHROOMS, 1, 4);
-		addTileSpirit(ESpirit.MUSHROOMS, 2, 1);
+		addTileSpirit(ESpirit.MUSHROOMS, 1, 3);
+		addTileSpirit(ESpirit.MUSHROOMS, 2, 2);
 
 		addTileSpirit(ESpirit.VINES, 1, 4);
 		addTileSpirit(ESpirit.VINES, 2, 2);

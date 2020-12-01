@@ -23,7 +23,6 @@ public class Spirit implements ImageViewAble, EventHandlerAble {
 
 		new ImageView(fileName, this, ELayerZ.SPIRIT_FRONT);
 		getImageView().setDimensions(Credentials.INSTANCE.dTile);
-		getImageView().setVisible(false);
 
 	}
 
@@ -33,7 +32,7 @@ public class Spirit implements ImageViewAble, EventHandlerAble {
 
 	@Override
 	public void handleMouseButtonPressedPrimary() {
-		Flow.INSTANCE.getCurrentGameState().handleTilePressed(this);
+		Flow.INSTANCE.getCurrentGameState().getFirst().handleTilePressed(this);
 	}
 
 }

@@ -9,7 +9,8 @@ public enum EText {
 	RESTART(TextTypeEnum.OPTION),
 	YOU_WON(TextTypeEnum.INDICATOR),
 	YOU_LOST(TextTypeEnum.INDICATOR),
-
+	REVEAL_TILES(TextTypeEnum.OPTION),
+	
 	;
 
 	private TextTypeEnum textTypeEnum = null;
