@@ -86,7 +86,6 @@ public class SpiritTag {
 	private void handleSpiritDifference(int count) {
 
 		this.numberDifferenceInteger += count;
-
 		handleIndicators();
 
 	}

@@ -32,7 +32,7 @@ public class Spirit implements ImageViewAble, EventHandlerAble {
 
 	@Override
 	public void handleMouseButtonPressedPrimary() {
-		Flow.INSTANCE.getCurrentGameState().getFirst().handleTilePressed(this);
+		Flow.INSTANCE.getCurrentGameState().handleSpiritPressed(this);
 	}
 
 }

@@ -11,7 +11,16 @@ public class StartGame extends AGameState {
 
 		Flow.INSTANCE.getFlow().addLast(StatisticsUpdateQuantity.class);
 		Flow.INSTANCE.getFlow().addLast(RevealTiles.class);
+		Flow.INSTANCE.getFlow().addLast(ChooseTile.class);
+		Flow.INSTANCE.getFlow().addLast(StatisticsUpdateQuantity.class);
 
+		Flow.INSTANCE.getFlow().addLast(RevealTiles.class);
+		Flow.INSTANCE.getFlow().addLast(ChooseTile.class);
+
+		Flow.INSTANCE.getFlow().addLast(RestartGame.class);
+		
+		Board.INSTANCE.setUpBoard();
+		
 		Flow.INSTANCE.proceed();
 
 	}

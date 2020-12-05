@@ -88,7 +88,7 @@ public class FX extends Application {
 						ObjectPool.INSTANCE.print();
 
 					else
-						Flow.INSTANCE.getCurrentGameState().getFirst().executeKeyPressed(keyCode);
+						Flow.INSTANCE.getCurrentGameState().executeKeyPressed(keyCode);
 
 				});
 

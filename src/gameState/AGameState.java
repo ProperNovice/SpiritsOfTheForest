@@ -1,8 +1,11 @@
 package gameState;
 
+import controller.Board;
 import enums.EText;
 import javafx.scene.input.KeyCode;
 import model.Spirit;
+import model.TileSpirit;
+import utils.ArrayList;
 import utils.KeyCodeHandler;
 import utils.Logger;
 import utils.Text;
@@ -41,7 +44,16 @@ public abstract class AGameState {
 		Text.INSTANCE.concealText();
 	}
 
-	public final void handleTilePressed(Spirit tile) {
+	public final void handleSpiritPressed(Spirit spirit) {
+
+		for (ArrayList<TileSpirit> list : Board.INSTANCE.board)
+			for (TileSpirit tileSpirit : list.clone())
+				if (tileSpirit.getListSpirit().getArrayList().contains(spirit))
+					handleTilePressedBoard(tileSpirit);
+
+	}
+
+	public void handleTilePressedBoard(TileSpirit tileSpirit) {
 
 	}
 

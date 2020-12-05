@@ -29,7 +29,7 @@ public enum Credentials {
 
 		this.dTile = new NumbersPair(110, 110);
 
-		this.selectEventHandlerAbleWidth = this.dTile.x / 2;
+		this.selectEventHandlerAbleWidth = this.dTile.x / 3;
 
 		this.redOrbAplhabet = this.dTile.x;
 

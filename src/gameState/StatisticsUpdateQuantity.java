@@ -33,7 +33,7 @@ public class StatisticsUpdateQuantity extends AGameState {
 				if (!this.quantity.containsKey(eSpirit))
 					this.quantity.put(eSpirit, new Number(0));
 
-				this.quantity.getValue(eSpirit).add(tileSpirit.getSpiritSize());
+				this.quantity.getValue(eSpirit).add(tileSpirit.getListSpirit().getArrayList().size());
 
 			}
 

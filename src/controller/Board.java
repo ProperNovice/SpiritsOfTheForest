@@ -21,6 +21,9 @@ public enum Board {
 
 		this.tileSpirits.loadOriginal();
 
+		for (TileSpirit tileSpirit : this.tileSpirits)
+			tileSpirit.setVisible(true);
+
 		for (int row = 0; row < 4; row++) {
 
 			ArrayList<TileSpirit> list = this.board.get(row);

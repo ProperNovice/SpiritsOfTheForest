@@ -43,7 +43,7 @@ public class TextGame implements EventHandlerAble {
 
 	@Override
 	public void handleMouseButtonPressedPrimary() {
-		Flow.INSTANCE.getCurrentGameState().getFirst().handleTextOptionPressed(this.textEnum);
+		Flow.INSTANCE.getCurrentGameState().handleTextOptionPressed(this.textEnum);
 	}
 
 	public void relocate(double x, double y) {

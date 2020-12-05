@@ -8,7 +8,8 @@ public enum Flow {
 
 	INSTANCE;
 
-	private ArrayList<AGameState> currentGameState = new ArrayList<AGameState>(1);
+	private ArrayList<AGameState> currentGameStateList = new ArrayList<AGameState>(1);
+	private AGameState currentGameState = null;
 	private ArrayList<Class<? extends AGameState>> flow = new ArrayList<>();
 
 	private Flow() {
@@ -17,13 +18,15 @@ public enum Flow {
 
 	public void proceed() {
 
-		this.currentGameState.clear();
+		this.currentGameStateList.clear();
 
 		executeGameStateLogger(this.flow.getFirst());
-		this.currentGameState.addLast(getGameState(this.flow.removeFirst()));
+		this.currentGameStateList.addLast(getGameState(this.flow.removeFirst()));
 
-		while (this.currentGameState.isOverCapacity())
-			this.currentGameState.removeLast();
+		while (this.currentGameStateList.isOverCapacity())
+			this.currentGameStateList.removeLast();
+
+		this.currentGameState = this.currentGameStateList.getFirst();
 
 	}
 
@@ -45,7 +48,7 @@ public enum Flow {
 		return this.flow;
 	}
 
-	public ArrayList<AGameState> getCurrentGameState() {
+	public AGameState getCurrentGameState() {
 		return this.currentGameState;
 	}
 

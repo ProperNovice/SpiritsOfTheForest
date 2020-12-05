@@ -5,6 +5,7 @@ import enums.EText;
 import model.TileSpirit;
 import utils.ArrayList;
 import utils.Flow;
+import utils.SelectImageViewManager;
 
 public class RevealTiles extends AGameState {
 
@@ -12,25 +13,25 @@ public class RevealTiles extends AGameState {
 
 		EText.REVEAL_TILES.show();
 
-		
-
 	}
 
 	@Override
 	protected void executeTextOption(EText eText) {
-		
-		Flow.INSTANCE.getCurrentGameState().print();
 
 		for (ArrayList<TileSpirit> list : Board.INSTANCE.board) {
+
+			if (list.isEmpty())
+				continue;
 
 			list.getFirst().revealTile();
 			list.getLast().revealTile();
 
+			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getFirst().getPivot(), list.getFirst());
+			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getLast().getPivot(), list.getLast());
+
 		}
-		
-		Flow.INSTANCE.executeGameState(RestartGame.class);
-		
-		Flow.INSTANCE.getCurrentGameState().print();
+
+		Flow.INSTANCE.proceed();
 
 	}
 

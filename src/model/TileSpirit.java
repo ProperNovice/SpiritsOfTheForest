@@ -5,6 +5,7 @@ import enums.ESpirit;
 import utils.CoordinatesListBuilder;
 import utils.Enums.RearrangeTypeEnum;
 import utils.EventHandler.EventHandlerAble;
+import utils.Flow;
 import utils.ListImageViewAbles;
 import utils.NumbersPair;
 
@@ -13,6 +14,7 @@ public class TileSpirit implements EventHandlerAble {
 	private ListImageViewAbles<Spirit> listSpirit = null;
 	private ListImageViewAbles<SpiritBack> listBack = null;
 	private ESpirit eSpirit = null;
+	private NumbersPair pivot = null;
 
 	public TileSpirit(ESpirit eSpirit, int count) {
 
@@ -36,8 +38,10 @@ public class TileSpirit implements EventHandlerAble {
 
 	public void setPivotRelocate(NumbersPair pivot) {
 
-		this.listSpirit.relocateList(pivot);
-		this.listBack.relocateList(pivot);
+		this.pivot = pivot;
+
+		this.listSpirit.relocateList(this.pivot);
+		this.listBack.relocateList(this.pivot);
 
 		this.listSpirit.relocateImageViews();
 		this.listBack.relocateImageViews();
@@ -65,8 +69,24 @@ public class TileSpirit implements EventHandlerAble {
 		return this.eSpirit;
 	}
 
-	public int getSpiritSize() {
-		return this.listSpirit.getArrayList().size();
+	public NumbersPair getPivot() {
+		return this.pivot;
+	}
+
+	public ListImageViewAbles<Spirit> getListSpirit() {
+		return this.listSpirit;
+	}
+
+	@Override
+	public void handleMouseButtonPressedPrimary() {
+		Flow.INSTANCE.getCurrentGameState().handleTilePressedBoard(this);
+	}
+
+	public void print() {
+
+		System.out.println(this.eSpirit + " -> " + this.listSpirit.getArrayList().size());
+		System.out.println();
+
 	}
 
 }
