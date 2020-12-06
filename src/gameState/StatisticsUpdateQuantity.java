@@ -24,15 +24,14 @@ public class StatisticsUpdateQuantity extends AGameState {
 
 	private void createQuantities() {
 
+		for (ESpirit eSpirit : ESpirit.values())
+			this.quantity.put(eSpirit, new Number(0));
+
 		for (ArrayList<TileSpirit> tileSpiritList : Board.INSTANCE.board) {
 
 			for (TileSpirit tileSpirit : tileSpiritList) {
 
 				ESpirit eSpirit = tileSpirit.getESpirit();
-
-				if (!this.quantity.containsKey(eSpirit))
-					this.quantity.put(eSpirit, new Number(0));
-
 				this.quantity.getValue(eSpirit).add(tileSpirit.getListSpirit().getArrayList().size());
 
 			}
