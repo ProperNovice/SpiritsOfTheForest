@@ -18,6 +18,8 @@ public class StartGame extends AGameState {
 		for (ESpirit eSpirit : ESpirit.values())
 			Statistics.INSTANCE.statistics.getValue(eSpirit).reset();
 		
+		new StatisticsUpdateQuantityNoProceed();
+		
 		EText.CHOOSE_DIFFICULTY_LEVEL.show();
 		EText.NORMAL.show();
 		EText.HARD.show();
