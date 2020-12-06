@@ -107,9 +107,11 @@ public class SpiritTag {
 	}
 
 	public void reset() {
+
 		this.numberDifferenceInteger = 0;
 		this.numberQuantityInteger = 0;
 		handleIndicators();
+
 	}
 
 }

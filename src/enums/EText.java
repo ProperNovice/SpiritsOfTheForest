@@ -11,6 +11,9 @@ public enum EText {
 	YOU_LOST(TextTypeEnum.INDICATOR),
 	REVEAL_TILES(TextTypeEnum.OPTION),
 	CHOOSE_TILE(TextTypeEnum.INDICATOR),
+	CHOOSE_DIFFICULTY_LEVEL(TextTypeEnum.INDICATOR),
+	NORMAL(TextTypeEnum.OPTION),
+	HARD(TextTypeEnum.OPTION),
 	
 	;
 

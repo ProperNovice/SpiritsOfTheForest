@@ -20,7 +20,7 @@ public class RevealTiles extends AGameState {
 //			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getFirst().getPivot(), list.getFirst());
 //			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getLast().getPivot(), list.getLast());
 
-		}
+		}	
 
 		Flow.INSTANCE.proceed();
 
