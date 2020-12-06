@@ -4,7 +4,6 @@ import controller.Board;
 import model.TileSpirit;
 import utils.ArrayList;
 import utils.Flow;
-import utils.SelectImageViewManager;
 
 public class RevealTiles extends AGameState {
 
@@ -18,8 +17,8 @@ public class RevealTiles extends AGameState {
 			list.getFirst().revealTile();
 			list.getLast().revealTile();
 
-			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getFirst().getPivot(), list.getFirst());
-			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getLast().getPivot(), list.getLast());
+//			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getFirst().getPivot(), list.getFirst());
+//			SelectImageViewManager.INSTANCE.addSelectCoordinates(list.getLast().getPivot(), list.getLast());
 
 		}
 

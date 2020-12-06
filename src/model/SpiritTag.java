@@ -5,7 +5,6 @@ import enums.ERedOrbClass;
 import enums.ESpirit;
 import redOrbAlphabet.RedOrbAlphabet;
 import redOrbAlphabet.RedOrbAlphabetMinus;
-import redOrbAlphabet.RedOrbAlphabetPlus;
 import utils.ImageViewAble;
 import utils.ObjectPool;
 
@@ -35,9 +34,12 @@ public class SpiritTag {
 
 		this.symbol = null;
 
-		if (this.numberDifferenceInteger > 0)
-			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetPlus.class);
-		else if (this.numberDifferenceInteger < 0)
+//		if (this.numberDifferenceInteger > 0)
+//			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetPlus.class);
+//		else if (this.numberDifferenceInteger < 0)
+//			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetMinus.class);
+
+		if (this.numberDifferenceInteger < 0)
 			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetMinus.class);
 
 		if (this.symbol != null) {
@@ -92,6 +94,21 @@ public class SpiritTag {
 
 	public void setQuantity(int count) {
 		this.numberQuantityInteger = count;
+		handleIndicators();
+	}
+
+	public boolean gameIsLost() {
+
+		if (this.numberDifferenceInteger >= 0)
+			return false;
+
+		return Math.abs(this.numberDifferenceInteger) > this.numberQuantityInteger;
+
+	}
+
+	public void reset() {
+		this.numberDifferenceInteger = 0;
+		this.numberQuantityInteger = 0;
 		handleIndicators();
 	}
 
