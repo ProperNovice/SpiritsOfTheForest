@@ -15,8 +15,12 @@ public abstract class RedOrbAlphabet implements ImageViewAble {
 		fileName += ".png";
 
 		new ImageView(fileName, this);
-		getImageView().setWidth(Credentials.INSTANCE.redOrbAplhabet);
+		getImageView().setWidth(getWidth());
 
+	}
+
+	protected double getWidth() {
+		return Credentials.INSTANCE.redOrbAplhabetBig;
 	}
 
 	protected abstract String getFileName();

@@ -17,10 +17,10 @@ public class SpiritTag {
 	public SpiritTag(ESpirit eSpirit, double x, double y) {
 
 		Spirit spirit = new Spirit(eSpirit);
-		this.x = x;
-		this.y = y;
+		this.x = x + Credentials.INSTANCE.dTile.x / 2;
+		this.y = y + Credentials.INSTANCE.dTile.y / 2;
 
-		spirit.getImageView().relocateTopLeft(this.x + 2 * Credentials.INSTANCE.dTile.x, this.y);
+		spirit.getImageView().relocateCenter(this.x + 2 * Credentials.INSTANCE.dTile.x, this.y);
 
 	}
 
@@ -34,18 +34,17 @@ public class SpiritTag {
 
 		this.symbol = null;
 
-//		if (this.numberDifferenceInteger > 0)
-//			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetPlus.class);
-//		else if (this.numberDifferenceInteger < 0)
-//			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetMinus.class);
-
 		if (this.numberDifferenceInteger < 0)
 			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetMinus.class);
+//		else if (this.numberDifferenceInteger > 0)
+//			this.symbol = ObjectPool.INSTANCE.acquire(RedOrbAlphabetPlus.class);
 
 		if (this.symbol != null) {
 
 			this.symbol.getImageView().setVisible(true);
-			this.symbol.getImageView().relocateTopLeft(this.x, this.y);
+			this.symbol.getImageView().relocateCenter(
+					this.x + Credentials.INSTANCE.redOrbAplhabetBig / 2 - Credentials.INSTANCE.redOrbAplhabetSmall / 2,
+					this.y);
 
 		}
 
@@ -55,7 +54,7 @@ public class SpiritTag {
 				.acquire(ERedOrbClass.INSTANCE.numbers.getValue(Math.abs(this.numberDifferenceInteger)));
 		this.numberDifferenceImageView.getImageView().setVisible(true);
 
-		this.numberDifferenceImageView.getImageView().relocateTopLeft(this.x + Credentials.INSTANCE.dTile.x, this.y);
+		this.numberDifferenceImageView.getImageView().relocateCenter(this.x + Credentials.INSTANCE.dTile.x, this.y);
 
 		// number quantity
 
@@ -63,7 +62,7 @@ public class SpiritTag {
 				.acquire(ERedOrbClass.INSTANCE.numbers.getValue(this.numberQuantityInteger));
 		this.numberQuantityImageView.getImageView().setVisible(true);
 
-		this.numberQuantityImageView.getImageView().relocateTopLeft(this.x + 3 * Credentials.INSTANCE.dTile.x, this.y);
+		this.numberQuantityImageView.getImageView().relocateCenter(this.x + 3 * Credentials.INSTANCE.dTile.x, this.y);
 
 	}
 
