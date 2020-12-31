@@ -1,8 +1,5 @@
 package utils;
 
-import utils.ISaveLoadStateAble;
-import utils.Logger;
-
 public class Number implements ISaveLoadStateAble {
 
 	private int numberCurrent, numberOriginal, numberState;
