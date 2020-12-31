@@ -20,7 +20,7 @@ import utils.NumbersPair;
 import utils.ObjectPool;
 import utils.ShutDown;
 
-public class FX extends Application {
+public class SpiritsOfTheForest extends Application {
 
 	private NumbersPair dimensionsInsets = new NumbersPair(16, 39);
 	private double pixesOnTheLeft = 180;
